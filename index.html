@@ -1,69 +1,177 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Integration effect on gender ratio</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<link href="dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+		<a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Integration effect on gender ratio</a>
+		<button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
+			data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+		<ul class="navbar-nav px-3">
+			<li class="nav-item text-nowrap">
+				<a class="nav-link" href="https://github.com/mgravey/Integrate-gender-ratio"><svg
+						xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+						class="bi bi-github" viewBox="0 0 16 16">
+						<path
+							d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+					</svg></a>
+			</li>
+		</ul>
+	</header>
+
+
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav id="sidebarMenu" class="col-md-4 col-lg-2 d-md-block bg-light sidebar collapse">
+				<div class="position-sticky pt-3">
+					<div id="settings">
+						<h1 class="h2">Settings</h1>
+						<form>
+							<div class="mb-3">
+								<label for="input-r" class="form-label">The retirement ratio (%)</label>
+								<input type="number" class="form-control" id="input-r" name="r" value="30" min="0"
+									max="100">
+							</div>
+							<div class="mb-3">
+								<label for="input-g" class="form-label">The expected rate (%)</label>
+								<input type="number" class="form-control" id="input-g" name="g" value="50" min="0"
+									max="100">
+							</div>
+							<div class="mb-3">
+								<label for="input-i" class="form-label">The initial rate (%)</label>
+								<input type="number" class="form-control" id="input-i" name="i" value="30" min="0"
+									max="100">
+							</div>
+							<div class="mb-1">
+								<label for="input-h" class="form-label">The hiring ratio (%)</label>
+								<input type="number" class="form-control" id="input-h" name="h" value="50" min="0"
+									max="100">
+							</div>
+							<div class="form-check mb-3">
+								<input type="checkbox" class="form-check-input" id="input-h-rb">
+								<label class="form-check-label" for="input-h-rb" name="h-rb" checked>multiple
+									values</label>
+							</div>
+							<div class="mb-3">
+								<label for="input-l" class="form-label">Length of the career</label>
+								<input type="number" class="form-control" id="input-l" name="l" value="30" min="0">
+							</div>
+						</form>
+					</div>
+					<!--<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+			<span>Saved reports</span>
+			<a class="link-secondary" href="#" aria-label="Add a new report">
+			  <span data-feather="plus-circle"></span>
+			</a>
+		  </h6>-->
+
+				</div>
+			</nav>
+
+			<main class="col-md-8 ms-sm-auto col-lg-10 px-md-4">
+				<div
+					class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+					<h1 class="h2">Integration effect on gender ratio</h1>
+					<div class="btn-toolbar mb-2 mb-md-0">
+						<div class="btn-group me-2">
+							<button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+							<button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+						</div>
+						<button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+							<span data-feather="calendar"></span>
+							This week
+						</button>
+					</div>
+				</div>
+
+
+				<p>
+					At any moment we have \[g=i-{{xr} \over l} + {{xh} \over {l}}=i+{x \over l}(h-r) \Leftrightarrow
+					x={l(g-i) \over (h-r)}\]
+					With \(i\) the initial rate, \(h\) the hiring ratio \(r\) the retirement ratio, \(g\) the expected
+					rate and \(l\) the length of the career. All ratio as represented as proportion of the gender of
+					interest.
+				</p>
+
+				<h2>Constant scenario</h2>
+				<p>
+					Let assume that only man retires until \(h\) is an achieved, this is an unrealistic limit scenario
+					\[g=i+{xh\over l} \Leftrightarrow x={l(g-i) \over h}\]
+					Scenario \(r\)=0%, \(g\)=50%, \(i\)=30%, \(h\)=100% and \(l\)=30 years &#x27F9; 6 years <br>
+					Scenario \(r\)=0%, \(g\)=50%, \(i\)=30%, \(h\)=50% &nbsp; and \(l\)=30 years &#x27F9; 12 years <br>
+					Scenario \(r\)=<span class='val-r'></span>%, \(g\)=<span class='val-g'></span>%, \(i\)=<span
+						class='val-i'></span>%, \(h\)=<span class='val-h'></span>% &nbsp; and \(l\)=<span
+						class='val-l'></span> years &#x27F9; <span id='dynamic-const' class='val-x'></span> (same units
+					as \(l\))
+				</p>
+
+				<p>
+					These are minimum duration assuming that only man retires, this is completely unrealistic.
+					This time let assume retirement equal to the initial ratio, typical scenario of change of regime,
+					\(h\) is a constant but suddenly change form \(i=r\) to \(h\)
+					\[x={l(g-i)\over(h-i)}\]
+					Scenario \(g\)=50%, \(r=i\)=30%, \(h\)=100% and \(l\)=30 years &#x27F9; 8.6 years <br>
+					Scenario \(g\)=50%, \(r=i\)=30%, \(h\)=50% &nbsp; and \(l\)=30 years &#x27F9; 30 years <br>
+					Scenario \(g\)=<span class='val-g'></span>%, \(r=i\)=<span class='val-i'></span>%, \(h\)=<span
+						class='val-h'></span>% &nbsp; and \(l\)=<span class='val-l'></span> years &#x27F9; <span
+						id='dynamic-const-r-eq-i' class='val-x'></span> (same units as \(l\))
+				</p>
+				<div id="constantRatios"></div>
+
+				<h2>Evolutionary scenario</h2>
+				<p>
+					Now we can assume that each step the \(r\) is the previous ratio. Then it’s coming a sequence.
+					With \(u_0=i\)
+					\[u_{x+1}=u_{x}-{u_{x} \over l}+{h \over l}=u_{x} \left(1-{1\over l}\right)+{h\over l}\]
+					\[\Rightarrow u_{x}=h+(i-h)(\left(1-{1\over l}\right)^{x}\]
+
+					\[\Rightarrow (1-\frac{s}{l})^{x}=\frac{g-h}{i-h}\]
+					\[\Leftrightarrow x=\frac{(\ln(g-h)-\ln(i-h))}{\ln(1-\frac{s}{l})}\]
+
+					Scenario \(g\)=50%,\(i\)=30%,\(h\)=100% and \(l\)=30 years &#x27F9; 10 years <br>
+					Scenario \(g\)=50%,\(i\)=30%,\(h\)=50% &nbsp; and \(l\)=30 years &#x27F9; Never <br>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Let assume \(g\)=49.5% that is 1% difference. &#x27F9; 108
+					years
+					<br>Scenario \(g\)=<span class='val-g'></span>%, \(i\)=<span class='val-i'></span>%, \(h\)=<span
+						class='val-h'></span>% &nbsp; and \(l\)=<span class='val-l'></span> years &#x27F9; <span
+						id='dynamic-evol' class='val-x'></span> (same units as \(l\))
+
+				</p>
+
+				<div id="evolutionaryState">
+
+				</div>
+
+			</main>
+		</div>
+	</div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
 	<script src='./dynamic_plot.js'></script>
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-	<h1>Integration effect on gender ratio</h1>
-	<div id="settings">
-		<form>
-			The retirement ratio (%):<input type="number" id="input-r" name="r" value="30" min="0" max="100" > <br>
-			The expected rate (%):<input type="number" id="input-g" name="g" value="50" min="0" max="100" > <br>
-			The initial rate (%):<input type="number" id="input-i" name="i" value="30" min="0" max="100" > <br>
-			The hiring ratio (%):<input type="number" id="input-h" name="h" value="50" min="0" max="100">, multiple values<input type="checkbox" id="input-h-rb" name="h-rb" checked > <br>
-			The length of the career<input type="number" id="input-l" name="l" value="30" min="0"  >
-		</form>
-	</div>
-	<p>
-		At any moment we have \[g=i-{{xr} \over l} + {{xh} \over {l}}=i+{x \over l}(h-r)  \Leftrightarrow x={l(g-i) \over (h-r)}\]
-		With \(i\) the initial rate, \(h\) the hiring ratio \(r\) the retirement ratio, \(g\) the expected rate and \(l\) the length of the career. All ratio as represented as proportion of the gender of interest.
-	</p>
 
-	<h2>Constant scenario</h2>
-	<p>
-		Let assume that only man retires until \(h\) is an achieved, this is an unrealistic limit scenario 
-		\[g=i+{xh\over l} \Leftrightarrow x={l(g-i) \over h}\]
-		Scenario \(r\)=0%, \(g\)=50%, \(i\)=30%, \(h\)=100% and \(l\)=30 years	&#x27F9; 6 years <br>
-		Scenario \(r\)=0%, \(g\)=50%, \(i\)=30%, \(h\)=50% &nbsp; and \(l\)=30 years	&#x27F9; 12 years <br>
-		Scenario \(r\)=<span class='val-r'></span>%, \(g\)=<span class='val-g'></span>%, \(i\)=<span class='val-i'></span>%, \(h\)=<span class='val-h'></span>% &nbsp; and \(l\)=<span class='val-l'></span> years	&#x27F9; <span id='dynamic-const' class='val-x'></span> (same units as \(l\))
-	</p>
 
-	<p>
-		These are minimum duration assuming that only man retires, this is completely unrealistic.
-		This time let assume retirement equal to the initial ratio, typical scenario of change of regime, \(h\) is a constant but suddenly change form \(i=r\) to \(h\)
-		\[x={l(g-i)\over(h-i)}\]
-		Scenario \(g\)=50%, \(r=i\)=30%, \(h\)=100% and \(l\)=30 years	&#x27F9; 8.6 years <br>
-		Scenario \(g\)=50%, \(r=i\)=30%, \(h\)=50% &nbsp; and \(l\)=30 years	&#x27F9; 30 years <br>
-		Scenario \(g\)=<span class='val-g'></span>%, \(r=i\)=<span class='val-i'></span>%, \(h\)=<span class='val-h'></span>% &nbsp; and \(l\)=<span class='val-l'></span> years	&#x27F9; <span id='dynamic-const-r-eq-i' class='val-x'></span> (same units as \(l\))
-	</p>
-	<div id="constantRatios">
-
-	</div>
-
-	<h2>Evolutionary scenario</h2>
-	<p>
-		Now we can assume that each step the \(r\) is the previous ratio. Then it’s coming a sequence.
-		With \(u_0=i\)
-		\[u_{x+1}=u_{x}-{u_{x} \over l}+{h \over l}=u_{x} \left(1-{1\over l}\right)+{h\over l}\]
-		\[\Rightarrow u_{x}=h+(i-h)(\left(1-{1\over l}\right)^{x}\]
-
-		\[\Rightarrow (1-\frac{s}{l})^{x}=\frac{g-h}{i-h}\]
-		\[\Leftrightarrow x=\frac{(\ln(g-h)-\ln(i-h))}{\ln(1-\frac{s}{l})}\]
-		
-		Scenario \(g\)=50%,\(i\)=30%,\(h\)=100% and \(l\)=30 years &#x27F9; 10 years <br>
-		Scenario \(g\)=50%,\(i\)=30%,\(h\)=50% &nbsp; and \(l\)=30 years &#x27F9; Never <br>
-		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Let assume \(g\)=49.5% that is 1% difference.	&#x27F9; 108 years
-		<br>Scenario \(g\)=<span class='val-g'></span>%, \(i\)=<span class='val-i'></span>%, \(h\)=<span class='val-h'></span>% &nbsp; and \(l\)=<span class='val-l'></span> years	&#x27F9; <span id='dynamic-evol' class='val-x'></span> (same units as \(l\))
-
-	</p>
-	
-	<div id="evolutionaryState">
-
-	</div>
 </body>
+
 </html>
