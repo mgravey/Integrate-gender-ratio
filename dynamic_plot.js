@@ -44,7 +44,7 @@ function redraw(r,g,i,h,l,rb){
 
 
 	Plotly.newPlot('constantRatios', traces1, { title:'Gender ratio in function of time,<br> under constant hiring and retirement ratio hypothesis',yaxis:{range:[0,100]},xaxis:{range:[0,2.99*l]} },{displaylogo: false, responsive: true});
-	Plotly.newPlot('evolutionaryState', traces2, { title:'Gender ratio in function of time,<br> under evolutionary hiring and retirement ratio hypothesis<br>(retirement equal the gender proportion)',yaxis:{range:[0,100]},xaxis:{range:[0,2.99*l]} },{displaylogo: false, responsive: true});
+	Plotly.newPlot('evolutionaryState', traces2, { title:'Gender ratio in function of time,<br> under evolutionary retirement ratio and constant hiring hypothesis<br>(retirement equal the gender proportion)',yaxis:{range:[0,100]},xaxis:{range:[0,2.99*l]} },{displaylogo: false, responsive: true});
 
 }
 
