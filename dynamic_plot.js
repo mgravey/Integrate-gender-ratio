@@ -29,7 +29,7 @@ function redraw(r,g,i,h,l,rb){
 	}
 
 	var goalLine ={
-			x: [0,500],
+			x: [0,3*l],
 			y: [g*100, g*100],
 			mode: 'lines',
 			name:'Goal line',
