@@ -85,85 +85,77 @@
 
 			<main class="col-md-8 ms-sm-auto col-lg-10 px-md-4">
 				<div
-					class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-					<h1 class="h2">Integration effect on gender ratio</h1>
-				</div>
+				class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+				<h1 class="h2">Integration Effect on Gender Ratio</h1>
+			</div>
 
-				<h2>Quick intro</h2>
-				<p>Currently, we can read in many media, and express my many people that gender ratio is not respected a little everywhere. As an example academia should give the right example. Currently, it's very common to read that if the current ratio of output of a bachelor or a master is 50/50 the ratio in a faculty should be the same. And use the fact that it's not to introduce all kinds of 'positive' bias. How a bias can be positive ? It just introduce more inequality. Sure, another kind of inequality, but any kind of discrimination is discrimination.
-				</p>
-				<p>
-				The goal here is not to debate if exist a gender issue or not. And this question is probably not to debate anymore. But the goal is to debate about the duration that any decision will take until to be simply measurable and to achieve a given goal.
-				</p>
-				<p>
-				Let assume some scenario, we are expecting a ratio \(g\) (our goal). If at the entry of a Bachelor we get \(g\) (we an integration period of 3 years), 3 years later we should get \(g\) at the entry of Masters too 2 extra years we can expect \(g\) as the ratio for PhD candidates. Assuming 4 years to complete the PhD and 5 extra years of postdoc. So 14 years after we introduce \(g\) at the bachelor level, we can expect it from people that candidate for professor position. For sure it’s wrong, the ratio is much less because people that did get a job before still apply ! But let assume we have are in a perfect world where everyone gets a position. (I dream of it !) Then only the new generation in the faculty was hired under the \(g\) hypothesis. Assuming that everyone has a complete academic life ( let say 30 years after getting professor position). Then assuming a non-gender-based hiring process we would trivially need 30 years to replace all the old generations and get \(g\). So from the time we get \(g\), it requires 14+30=44 years before faculty actually reach the goal.
-				</p>
-				<p>
-				Let study some bias scenarios to see the effects.
-				For the following part, we will assume that \(g\) is the ratio we get 14 years ago in bachelor. Therefore 0 is the start of a professor position. Furthermore, we assume in this study that all positions are renewed and no extra position created.
-				</p>
+			<h2>Quick Introduction</h2>
+			<p>Currently, we often read in various media, and it is expressed by many people, that the gender ratio is not respected in many areas. For example, academia should set the right example. It’s common to hear that if the current gender ratio of graduates from a bachelor’s or master’s program is 50/50, the ratio among faculty should reflect the same. This leads to the introduction of so-called 'positive' bias. But how can a bias be positive? It just introduces more inequality—another form of inequality, but any kind of discrimination is still discrimination.
+			</p>
+			<p>
+				The goal here is not to debate whether a gender issue exists. That question is probably no longer open for debate. Instead, the focus is on discussing how long it will take for any decision to have a measurable effect and reach the desired goal.
+			</p>
+			<p>
+				Let’s assume a scenario where we aim for a ratio \(g\) (our goal). If at the bachelor’s entry level, we achieve \(g\) (with an integration period of 3 years), then 3 years later we should also achieve \(g\) at the master’s level. After an additional 2 years, we can expect \(g\) to be the ratio for PhD candidates. Assuming 4 years to complete the PhD and 5 extra years of postdoc, 14 years after introducing \(g\) at the bachelor’s level, we can expect candidates for professor positions to meet the target ratio. But that’s not entirely correct; the ratio will be much lower because people who obtained jobs earlier will still apply. However, in an ideal world where everyone gets a position (I dream of this!), only the new generation of faculty will have been hired under the \(g\) assumption. Assuming that everyone has a full academic career (let’s say 30 years after becoming a professor), and assuming a non-gender-biased hiring process, it would take 30 years to replace the older generations and fully achieve \(g\). So from the time we introduce \(g\), it will take 14+30=44 years before the faculty fully reaches this goal.
+			</p>
+			<p>
+				Let’s examine some biased scenarios to observe the effects.
+				In the following analysis, we will assume that \(g\) was the gender ratio of bachelor’s graduates 14 years ago. Therefore, year 0 marks the start of professor positions. Moreover, this study assumes all positions are replaced, with no additional positions created.
+			</p>
 
-				<p>
-					At any moment we have \[g=i-{{xr} \over l} + {{xh} \over {l}}=i+{x \over l}(h-r) \Leftrightarrow
-					x={l(g-i) \over (h-r)}\]
-					With \(i\) the initial rate, \(h\) the hiring ratio \(r\) the retirement ratio, \(g\) the expected
-					rate and \(l\) the length of the career. All ratio as represented as proportion of the gender of
-					interest.
-				</p>
+			<p>
+				At any time, we have:
+				\[
+				g = i - \frac{xr}{l} + \frac{xh}{l} = i + \frac{x}{l}(h - r) \Leftrightarrow x = \frac{l(g - i)}{(h - r)}
+				\]
+				Where \(i\) is the initial rate, \(h\) is the hiring ratio, \(r\) is the retirement ratio, \(g\) is the expected rate, and \(l\) is the length of the career. All ratios are represented as proportions of the gender of interest.
+			</p>
 
-				<h2>Constant scenario</h2>
-				<p>
-					Let assume that only man retires until \(h\) is an achieved, this is an unrealistic limit scenario
-					\[g=i+{xh\over l} \Leftrightarrow x={l(g-i) \over h}\]
-					Scenario \(r\)=0%, \(g\)=50%, \(i\)=30%, \(h\)=100% and \(l\)=30 years &#x27F9; 6 years <br>
-					Scenario \(r\)=0%, \(g\)=50%, \(i\)=30%, \(h\)=50% &nbsp; and \(l\)=30 years &#x27F9; 12 years <br>
-					Scenario \(r\)=<span class='val-r'></span>%, \(g\)=<span class='val-g'></span>%, \(i\)=<span
-						class='val-i'></span>%, \(h\)=<span class='val-h'></span>% &nbsp; and \(l\)=<span
-						class='val-l'></span> years &#x27F9; <span id='dynamic-const' class='val-x'></span> (same units
-					as \(l\))
-				</p>
+			<h2>Constant Scenario</h2>
+			<p>
+				Let's assume that only men retire until \(h\) is achieved. This is an unrealistic limit scenario:
+				\[g = i + \frac{x h}{l} \Leftrightarrow x = \frac{l(g - i)}{h}\]
+				Scenario: \(r = 0\%\), \(g = 50\%\), \(i = 30\%\), \(h = 100\%\), and \(l = 30\) years &#x27F9; 6 years <br>
+				Scenario: \(r = 0\%\), \(g = 50\%\), \(i = 30\%\), \(h = 50\%\), and \(l = 30\) years &#x27F9; 12 years <br>
+				Scenario: \(r = <span class='val-r'></span>\%\), \(g = <span class='val-g'></span>\%\), \(i = <span class='val-i'></span>\%\), \(h = <span class='val-h'></span>\%\), and \(l = <span class='val-l'></span>\) years &#x27F9; <span id='dynamic-const' class='val-x'></span> (same units as \(l\)).
+			</p>
 
-				<p>
-					These are minimum duration assuming that only man retires, this is completely unrealistic.
-					This time let assume retirement equal to the initial ratio, typical scenario of change of regime,
-					\(h\) is a constant but suddenly change form \(i=r\) to \(h\)
-					\[x={l(g-i)\over(h-i)}\]
-					Scenario \(g\)=50%, \(r=i\)=30%, \(h\)=100% and \(l\)=30 years &#x27F9; 8.6 years <br>
-					Scenario \(g\)=50%, \(r=i\)=30%, \(h\)=50% &nbsp; and \(l\)=30 years &#x27F9; 30 years <br>
-					Scenario \(g\)=<span class='val-g'></span>%, \(r=i\)=<span class='val-i'></span>%, \(h\)=<span
-						class='val-h'></span>% &nbsp; and \(l\)=<span class='val-l'></span> years &#x27F9; <span
-						id='dynamic-const-r-eq-i' class='val-x'></span> (same units as \(l\))
-				</p>
-				<div id="constantRatios"></div>
+			<p>
+				These are minimum durations assuming that only men retire, which is completely unrealistic.
+				Now let's assume retirement is equal to the initial ratio, a typical scenario of regime change, where \(h\) is constant but suddenly changes from \(i = r\) to \(h\):
+				\[x = \frac{l(g - i)}{(h - i)}\]
+				Scenario: \(g = 50\%\), \(r = i = 30\%\), \(h = 100\%\), and \(l = 30\) years &#x27F9; 8.6 years <br>
+				Scenario: \(g = 50\%\), \(r = i = 30\%\), \(h = 50\%\), and \(l = 30\) years &#x27F9; 30 years <br>
+				Scenario: \(g = <span class='val-g'></span>\%\), \(r = i = <span class='val-i'></span>\%\), \(h = <span class='val-h'></span>\%\), and \(l = <span class='val-l'></span>\) years &#x27F9; <span id='dynamic-const-r-eq-i' class='val-x'></span> (same units as \(l\)).
+			</p>
 
-				<h2>Evolutionary scenario</h2>
-				<p>
-					Now we can assume that each step the \(r\) is the previous ratio. Then it’s coming a sequence.
-					With \(u_0=i\)
-					\[u_{x+1}=u_{x}-{u_{x} \over l}+{h \over l}=u_{x} \left(1-{1\over l}\right)+{h\over l}\]
-					\[\Rightarrow u_{x}=h+(i-h)(\left(1-{1\over l}\right)^{x}\]
+			<div id="constantRatios"></div>
 
-					\[\Rightarrow (1-\frac{s}{l})^{x}=\frac{g-h}{i-h}\]
-					\[\Leftrightarrow x=\frac{(\ln(g-h)-\ln(i-h))}{\ln(1-\frac{s}{l})}\]
+			<h2>Evolutionary Scenario</h2>
+			<p>
+				Now we assume that in each step, the \(r\) is the previous ratio, forming a sequence.
+				With \(u_0 = i\):
+				\[u_{x+1} = u_x \left(1 - \frac{1}{l}\right) + \frac{h}{l}\]
+				\[\Rightarrow u_x = h + (i - h)\left(1 - \frac{1}{l}\right)^x\]
 
-					Scenario \(g\)=50%,\(i\)=30%,\(h\)=100% and \(l\)=30 years &#x27F9; 10 years <br>
-					Scenario \(g\)=50%,\(i\)=30%,\(h\)=50% &nbsp; and \(l\)=30 years &#x27F9; Never <br>
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Let assume \(g\)=49.5% that is 1% difference. &#x27F9; 108
-					years
-					<br>Scenario \(g\)=<span class='val-g'></span>%, \(i\)=<span class='val-i'></span>%, \(h\)=<span
-						class='val-h'></span>% &nbsp; and \(l\)=<span class='val-l'></span> years &#x27F9; <span
-						id='dynamic-evol' class='val-x'></span> (same units as \(l\))
+				\[\Rightarrow \left(1 - \frac{1}{l}\right)^x = \frac{g - h}{i - h}\]
+				\[\Leftrightarrow x = \frac{\ln(g - h) - \ln(i - h)}{\ln(1 - \frac{1}{l})}\]
 
-				</p>
+				Scenario: \(g = 50\%\), \(i = 30\%\), \(h = 100\%\), and \(l = 30\) years &#x27F9; 10 years <br>
+				Scenario: \(g = 50\%\), \(i = 30\%\), \(h = 50\%\), and \(l = 30\) years &#x27F9; Never <br>
+				Let’s assume \(g = 49.5\%\), a 1% difference &#x27F9; 108 years <br>
+				Scenario: \(g = <span class='val-g'></span>\%\), \(i = <span class='val-i'></span>\%\), \(h = <span class='val-h'></span>\%\), and \(l = <span class='val-l'></span>\) years &#x27F9; <span id='dynamic-evol' class='val-x'></span> (same units as \(l\)).
+			</p>
 
-				<div id="evolutionaryState">
+			<div id="evolutionaryState"></div>
 
-				</div>
+			<h2>Conclusion</h2>
+			<p>
+				Even in the most biased scenario, it takes 6 years to achieve the goal. In a scenario without hiring bias (but with a fully biased retirement scenario), we still need 12 years, assuming a 30% gender issue as the starting point. Any faculty achieving a faster transition either created new positions, had some professors leave before retirement, or biased the hiring process.
+			</p>
 
-				<h2>Conclusion</h2>
-				<p>Even in the most bias scenario we still 6 years to achieve the goal, and with a non-hiring bias scenario ( and still completely bias retiring scenario) we still need 12 years assuming 30% gender issue as starting points. Any faculty that achieve faster transition, either created new position, has some professors that left before retirement, or biased the hiring process.</p>
 
-			</main>
+		</main>
 		</div>
 	</div>
 
