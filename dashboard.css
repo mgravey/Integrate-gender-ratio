@@ -46,9 +46,17 @@ main {
   padding-bottom: 3rem;
 }
 
-main > p,
-main > .alert {
-  max-width: 80ch;
+/* one centered reading column, shared by text and charts */
+main > * {
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main p,
+main li {
+  text-align: justify;
+  hyphens: auto;
 }
 
 main > h2 {
@@ -97,7 +105,6 @@ mjx-container[display="true"] {
 }
 
 .scenario-summary {
-  max-width: 80ch;
   padding: .75rem 1rem;
   border-left: 3px solid var(--bs-primary);
   background-color: rgba(var(--bs-primary-rgb), .07);
