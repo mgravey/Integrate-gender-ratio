@@ -2,12 +2,6 @@ body {
   font-size: .875rem;
 }
 
-.feather {
-  width: 16px;
-  height: 16px;
-  vertical-align: text-bottom;
-}
-
 /*
  * Sidebar
  */
@@ -26,43 +20,63 @@ body {
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
 }
 
-@media (max-width: 767.98px) {
-  .sidebar {
-    top: 5rem;
-  }
-}
-
-.sidebar-sticky {
-  position: relative;
-  top: 0;
+.sidebar > .position-sticky {
   height: calc(100vh - 48px);
-  padding-top: .5rem;
-  overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
 
-.sidebar .nav-link {
-  font-weight: 500;
-  color: #333;
+@media (max-width: 767.98px) {
+  .sidebar {
+    bottom: auto;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+  }
+
+  .sidebar > .position-sticky {
+    height: auto;
+    max-height: calc(100vh - 48px);
+  }
 }
 
-.sidebar .nav-link .feather {
-  margin-right: 4px;
-  color: #727272;
+/*
+ * Content
+ */
+
+main {
+  font-size: 1rem;
+  padding-bottom: 3rem;
 }
 
-.sidebar .nav-link.active {
-  color: #007bff;
+main > p,
+main > .alert {
+  max-width: 80ch;
 }
 
-.sidebar .nav-link:hover .feather,
-.sidebar .nav-link.active .feather {
-  color: inherit;
+main > h2 {
+  margin-top: 2rem;
 }
 
-.sidebar-heading {
-  font-size: .75rem;
-  text-transform: uppercase;
+mjx-container[display="true"] {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.your-scenario {
+  display: inline-block;
+  margin-top: .25rem;
+  padding: 0 .35rem;
+  border-left: 3px solid var(--bs-primary);
+  background-color: rgba(var(--bs-primary-rgb), .07);
+}
+
+.val-x {
+  font-weight: 600;
+  color: var(--bs-primary);
+}
+
+#constantRatios,
+#evolutionaryState {
+  min-height: 450px;
+  margin-bottom: 1rem;
 }
 
 /*
@@ -82,19 +96,9 @@ body {
   right: 1rem;
 }
 
-.navbar .form-control {
+.scenario-summary {
+  max-width: 80ch;
   padding: .75rem 1rem;
-  border-width: 0;
-  border-radius: 0;
-}
-
-.form-control-dark {
-  color: #fff;
-  background-color: rgba(255, 255, 255, .1);
-  border-color: rgba(255, 255, 255, .1);
-}
-
-.form-control-dark:focus {
-  border-color: transparent;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+  border-left: 3px solid var(--bs-primary);
+  background-color: rgba(var(--bs-primary-rgb), .07);
 }
